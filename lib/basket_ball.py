@@ -182,3 +182,12 @@ def game_dict():
             ]
         }
     }
+def get_all_players(): 
+    data = game_dict() 
+    return data['home']['players'] + data['away']['players'] 
+def num_points_per_game(player_name):
+    players = get_all_players() 
+    for player in players:
+       if player['name'] == player_name:
+        return player['points_per_game']
+       
